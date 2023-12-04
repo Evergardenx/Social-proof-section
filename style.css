@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: url('./images/bg-pattern-top-desktop.svg'), url('./images/bg-pattern-bottom-desktop.svg');
+  background-position: left top, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  font-family: 'Spartan',sans-serif;
+  font-size: 15px;
+}
+
+.container{
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.primary__grid{
+  display: grid;
+  grid-template-rows: repeat(2, 300px);
+  place-items: center;
+}
+
+.top__grid{
+  display: grid;
+  grid-template-columns: 300px 400px;
+  column-gap: 140px;
+  margin-top: 2rem;
+}
+
+.primary__content h1{
+  font-weight: 700;
+  color: hsl(300, 43%, 22%);
+  margin-bottom: 1rem;
+}
+
+.primary__content p {
+  color: hsl(303, 10%, 53%);
+}
+
+.rating{
+  background-color: hsl(300, 24%, 96%);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+}
+
+.rating:nth-child(2){
+  left: 2rem;
+}
+
+.rating:nth-child(3){
+  left: 4rem;
+}
+
+.rating p{
+  margin-left: 15px;
+  color: hsl(300, 43%, 22%);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.bottom__grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 10px;
+}
+
+.user__review{
+  background-color: hsl(300, 43%, 22%);
+  border-radius: 10px;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  row-gap: 10px;
+  color: hsl(0, 0%, 100%);
+  position: relative;
+}
+
+.user__review:nth-child(2){
+  top: 2rem;
+}
+
+.user__review:nth-child(3){
+  top: 4rem;
+}
+
+.user__review p{
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  font-weight: 400;
+}
+
+.user__details{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.user__details img{
+  border-radius: 50%;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.info{
+  font-weight: 500;
+}
+
+.verified{
+  font-size: 0.7rem;
+  color: hsl(333, 80%, 67%);
+}
+
+@media screen and (max-width: 768px) {
+  .primary__grid{
+    grid-template-rows: 1fr;
+  }
+
+  .top__grid {
+    grid-template-columns: 1fr;
+  }
+  .ratings{
+    margin: 20px 0;
+  }
+  .rating{
+    flex-direction: column;
+  }
+
+  .rating .stars{
+    margin-bottom: 5px;
+  }
+
+  .rating:nth-child(2),
+  .rating:nth-child(3){
+    left: unset;
+  }
+
+  .user__review:nth-child(2),
+  .user__review:nth-child(3){
+    top: unset;
+  }
+}
